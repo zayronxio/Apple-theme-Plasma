@@ -1,0 +1,20 @@
+[Desktop Entry]
+Name=AppleDark-ALL
+Comment=Plasma theme for miscellaneous global themes of kde, whit similar in appearance to macos
+
+X-KDE-PluginInfo-Author=zayronxio
+X-KDE-PluginInfo-Name=AppleDark-ALL
+X-KDE-PluginInfo-Version=5.84.0
+X-KDE-PluginInfo-License=LGPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-API=5.0
+
+
+[ContrastEffect]
+enabled=false
+contrast=0.2
+intensity=1.4
+saturation=10
+
+[AdaptiveTransparency]
+enabled=true
