@@ -11,7 +11,7 @@ widgetStyle=kvantum
 LayoutName=org.kde.breeze.desktop
 
 [kwinrc][WindowSwitcher]
-LayoutName=org.kde.breeze.desktop
+LayoutName=MediumRounded
 
 [kwinrc][org.kde.kdecoration2]
 ButtonsOnLeft=XAI
