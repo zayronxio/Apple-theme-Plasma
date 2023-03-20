@@ -86,43 +86,89 @@ panelbottom = new Panel
       else{
            var apps03 = `${apps02}`;
           }
+           /*email*/
+      if (defaultApplication("mailer"))
+         {
+          var apps04 = `${apps03},applications:${defaultApplication("mailer")}`;
+         }
+      else{
+       var apps04 = `${apps03}`;
+         }
      /*konsole*/
       if (applicationExists("org.kde.konsole.desktop"))
           {
-           var apps04 = `${apps03},applications:org.kde.konsole.desktop`;
-          }
-      else{
-           var apps04 = `${apps03}`;
-          }
-     /*settings*/
-      if (applicationExists("systemsettings.desktop"))
-          {
-           var apps05 = `${apps04},applications:systemsettings.desktop`;
+           var apps05 = `${apps04},applications:org.kde.konsole.desktop`;
           }
       else{
            var apps05 = `${apps04}`;
           }
+     /*settings*/
+      if (applicationExists("systemsettings.desktop"))
+          {
+           var apps06 = `${apps05},applications:systemsettings.desktop`;
+          }
+      else{
+           var apps06 = `${apps05}`;
+          }
+          /*music player*/
+          if (applicationExists("org.kde.elisa.desktop"))
+        {
+       var apps07 = `${apps06},applications:org.kde.elisa.desktop`;
+        }
+     else{
+      if (applicationExists("audacious.desktop"))
+        {
+       var apps07 = `${apps06},applications:audacious.desktop`;
+        }
+     else{
+       if (applicationExists("file:///var/lib/flatpak/exports/share/applications/org.atheme.audacious.desktop"))
+        {
+       var apps07 = `${apps06},file:///var/lib/flatpak/exports/share/applications/org.atheme.audacious.desktop`;
+        }
+     else{
+       if (applicationExists("clementine.desktop"))
+        {
+       var apps07 = `${apps06},applications:clementine.desktop`;
+        }
+     else{
+       if (applicationExists("org.gnome.Lollypop.desktop"))
+        {
+       var apps07 = `${apps06},applications:org.gnome.Lollypop.desktop`;
+        }
+     else{
+       if (applicationExists("com.github.neithern.g4music.desktop"))
+        {
+       var apps07 = `${apps06},applications:com.github.neithern.g4music.desktop`;
+        }
+     else{
+       var apps07 = `${apps06}`;
+         }
+         }
+         }
+         }
+         }
+         }
      /*text-editor*/
       if (applicationExists("org.kde.kate.desktop"))
           {
-           var apps06 = `${apps05},applications:org.kde.kate.desktop`;
+           var apps08 = `${apps07},applications:org.kde.kate.desktop`;
           }
       else{
             if (applicationExists("org.kde.kwrite.desktop"))
                  {
-                  var apps06 = `${apps05},applications:org.kde.kwrite.desktop`;
+                  var apps08 = `${apps07},applications:org.kde.kwrite.desktop`;
                  }
              else{
-                  var apps06 = `${apps05}`;
+                  var apps08 = `${apps07}`;
                  }
           }
      /*okular*/
       if (applicationExists("okularApplication_comicbook.desktop"))
           {
-           var apps07 = `${apps06},applications:okularApplication_comicbook.desktop`;
+           var apps09 = `${apps08},applications:okularApplication_comicbook.desktop`;
           }
       else{
-           var apps07 = `${apps06}`;
+           var apps09 = `${apps09}`;
           }
            /*filemanager/*/
            /*icons dock /*/
