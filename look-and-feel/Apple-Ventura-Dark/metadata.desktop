@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Apple-Ventura-Dark
+X-KDE-PluginInfo-Category=Plasma Look And Feel
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PluginInfo-Author=zayronxio
+X-KDE-PluginInfo-Email=zayronxio@hotmail.com
+X-KDE-PluginInfo-License=GPL3.0
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Name=Apple-Ventura-Dark
+X-KDE-PluginInfo-Website=AppleOs-Ventura.com
+X-KDE-fallbackPackage=org.kde.breeze.desktop
+
+X-KPackage-Dependencies=kns://colorschemes.knsrc/api.kde-look.org/1870462,kns://plasma-themes.knsrc/api.kde-look.org/1975770,kns://aurorae.knsrc/api.kde-look.org/1409704,kns://wallpaper.knsrc/api.kde-look.org/1886183,kns://wallpaper.knsrc/api.kde-look.org/1459313,kns://wallpaper.knsrc/api.kde-look.org/1973337,kns://wallpaper.knsrc/api.kde-look.org/1409728,kns://wallpaper.knsrc/api.kde-look.org/1975674,kns://icons.knsrc/api.kde-look.org/1400021,kns://plasmoids.knsrc/api.kde-look.org/1402942,kns://plasmoids.knsrc/api.kde-look.org/1916655,kns://plasmoids.knsrc/api.kde-look.org/1269296,kns://plasmoids.knsrc/api.kde-look.org/1166510,kns://plasmoids.knsrc/api.kde-look.org/1384156,kns://plasmoids.knsrc/api.kde-look.org/1973454,kns://plasmoids.knsrc/api.kde-look.org/1295376
