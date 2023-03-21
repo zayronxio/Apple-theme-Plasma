@@ -42,16 +42,20 @@ paneltop.addWidget("com.github.prayag2.controlcentre");
           paneltop_clock.writeConfig("layout", '<html><body><center><span style="font-weight:500;">{DD:u} {d} {MM:u} {h}:{ii}</span></center></body></html>');
            paneltop.addWidget("org.kde.plasma.marginsseparator");
             paneltop.addWidget("org.kde.plasma.marginsseparator");
-    ;;
-    ;;
+            /****************************/
+/*Variables para reconocer resolucion*/
+var allDesktops = desktops()
+var resolution = screenGeometry(allDesktops)
+var maxdock = (`${resolution.width}`*.90)
+var mindock = (`${resolution.width}`*.14)
 panelbottom = new Panel
  panelbottom.location = "bottom"
   panelbottom.height = gridUnit * 3.7
-   panelbottom.offset = 0;
+   panelbottom.offset = 0
     panelbottom.alignment = "center"
      panelbottom.panelVisibility = "2"
-      panelbottom.maximumLength = 90 * Math.floor(gridUnit * 90 / 90)
-       panelbottom.minimumLength = 12 * Math.floor(gridUnit * 12 / 12)
+      panelbottom.maximumLength = `${maxdock}`
+       panelbottom.minimumLength = `${mindock}`
         panelbottom.hiding = "windowscover"
          panelbottom.addWidget("org.kde.plasma.marginsseparator")
           panelbottom_start = panelbottom.addWidget("P-Connor.PlasmaDrawer")
