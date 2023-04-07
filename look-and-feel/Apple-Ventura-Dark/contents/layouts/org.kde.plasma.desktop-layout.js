@@ -2,15 +2,18 @@
 paneltop = new Panel
 paneltop.hiding = "none"
 paneltop.location = "top"
-paneltop.height = 2 * Math.floor(gridUnit * 1.3 / 2)
+paneltop.height = 24
 paneltop.offset = 0
 ;
 /*Variables para reconocer resolucion*/
 var allDesktops = desktops()
 var resolution = screenGeometry(allDesktops)
 /*kapple*/
-if (`${resolution.width}` < 1920)
-  {
+if (`${resolution.width}` < 1920){
+  if (`${resolution.width}` < 900){
+     } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
    } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
@@ -28,43 +31,61 @@ paneltop_clock = paneltop.addWidget("org.kde.plasma.bigSur-inlineBattery");
     paneltop_clock.writeConfig("iconWidth", "23");
      paneltop_clock.writeConfig("padding", "4");
       paneltop_clock.writeConfig("showPercentage", "false");
-if (`${resolution.width}` < 1920)
-  {
+if (`${resolution.width}` < 1920){
+  if (`${resolution.width}` < 900){
+     } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
    } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
 }
 paneltop.addWidget("org.kde.plasma.networkmanagement");
-if (`${resolution.width}` < 1920)
-  {
+if (`${resolution.width}` < 1920){
+  if (`${resolution.width}` < 900){
+     } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
    } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
 }
   paneltop.addWidget("org.kde.plasma.volume");
-if (`${resolution.width}` < 1920)
-  {
+if (`${resolution.width}` < 1920){
+  if (`${resolution.width}` < 900){
+     } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
    } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
 }
 paneltop.addWidget("org.kde.plasma.notifications");
-if (`${resolution.width}` < 1920)
-  {
+if (`${resolution.width}` < 1920){
+  if (`${resolution.width}` < 900){
+     } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
    } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
 }
 paneltop.addWidget("com.github.prayag2.controlcentre");
-if (`${resolution.width}` < 1920)
-  {
+if (`${resolution.width}` < 1920){
+  if (`${resolution.width}` < 900){
+     } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
    } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
 }
    paneltop.addWidget("org.kde.milou");
-    if (`${resolution.width}` < 1920)
-  {
+ if (`${resolution.width}` < 1920){
+  if (`${resolution.width}` < 900){
+     } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
    } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
@@ -74,8 +95,11 @@ if (`${resolution.width}` < 1920)
         paneltop_clock.writeConfig("useUserLayout", "true");
          paneltop_clock.currentConfigGroup = ["Configuration/Appearance"];
           paneltop_clock.writeConfig("layout", '<html><body><center><span style="font-weight:500;">{DD:u} {d} {MM:u} {h}:{ii}</span></center></body></html>');
-           if (`${resolution.width}` < 1920)
-  {
+ if (`${resolution.width}` < 1920){
+  if (`${resolution.width}` < 900){
+     } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
    } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
