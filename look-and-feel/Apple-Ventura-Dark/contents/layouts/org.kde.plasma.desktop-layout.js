@@ -3,7 +3,7 @@ paneltop = new Panel
 paneltop.hiding = "none"
 paneltop.location = "top"
 paneltop.height = 2 * Math.floor(gridUnit * 1.3 / 2)
-paneltop.offset = 0;
+paneltop.offset = 0
 ;
 /*kapple*/
 paneltop.addWidget("org.kde.plasma.marginsseparator");
@@ -26,6 +26,9 @@ paneltop.addWidget("org.kde.plasma.marginsseparator");
 paneltop.addWidget("org.kde.plasma.networkmanagement");
  paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.volume");
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
 paneltop.addWidget("org.kde.plasma.notifications");
  paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
@@ -46,16 +49,14 @@ paneltop.addWidget("com.github.prayag2.controlcentre");
 /*Variables para reconocer resolucion*/
 var allDesktops = desktops()
 var resolution = screenGeometry(allDesktops)
-var maxdock = (`${resolution.width}`*.90)
-var mindock = (`${resolution.width}`*.14)
 panelbottom = new Panel
  panelbottom.location = "bottom"
   panelbottom.height = gridUnit * 3.7
    panelbottom.offset = 0
     panelbottom.alignment = "center"
      panelbottom.panelVisibility = "2"
-      panelbottom.maximumLength = `${maxdock}`
-       panelbottom.minimumLength = `${mindock}`
+      panelbottom.maximumLength = (`${resolution.width}`*(.90))
+       panelbottom.minimumLength = (`${resolution.width}`*(.14))
         panelbottom.hiding = "windowscover"
          panelbottom.addWidget("org.kde.plasma.marginsseparator")
           panelbottom_start = panelbottom.addWidget("P-Connor.PlasmaDrawer")
@@ -182,7 +183,7 @@ panelbottom = new Panel
        panelbottom_tsk.writeConfig("launchers", "");
         panelbottom_tsk.currentConfigGroup = ["General"];
          panelbottom_tsk.writeConfig("indicateAudioStreams", "false");
-          panelbottom_tsk.writeConfig("launchers", `${apps01},${browser},${apps07}`);
+          panelbottom_tsk.writeConfig("launchers", `${apps01},${browser},${apps09}`);
            panelbottom_tsk.writeConfig("maxStripes", "1");
              /*dock/*/
     /*Trash*/
