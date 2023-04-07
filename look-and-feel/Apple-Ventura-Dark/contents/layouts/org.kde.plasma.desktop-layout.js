@@ -5,9 +5,16 @@ paneltop.location = "top"
 paneltop.height = 2 * Math.floor(gridUnit * 1.3 / 2)
 paneltop.offset = 0
 ;
+/*Variables para reconocer resolucion*/
+var allDesktops = desktops()
+var resolution = screenGeometry(allDesktops)
 /*kapple*/
-paneltop.addWidget("org.kde.plasma.marginsseparator");
- paneltop.addWidget("org.kde.plasma.marginsseparator");
+if (`${resolution.width}` < 1920)
+  {
+   } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
   paneltop.addWidget("org.kpple.kppleMenu");
 paneltop_napp = paneltop.addWidget("org.kde.activeApplication");
  paneltop_napp.currentConfigGroup = ["Appearance"];
@@ -21,37 +28,62 @@ paneltop_clock = paneltop.addWidget("org.kde.plasma.bigSur-inlineBattery");
     paneltop_clock.writeConfig("iconWidth", "23");
      paneltop_clock.writeConfig("padding", "4");
       paneltop_clock.writeConfig("showPercentage", "false");
-paneltop.addWidget("org.kde.plasma.marginsseparator");
- paneltop.addWidget("org.kde.plasma.marginsseparator");
+if (`${resolution.width}` < 1920)
+  {
+   } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
 paneltop.addWidget("org.kde.plasma.networkmanagement");
- paneltop.addWidget("org.kde.plasma.marginsseparator");
+if (`${resolution.width}` < 1920)
+  {
+   } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
   paneltop.addWidget("org.kde.plasma.volume");
+if (`${resolution.width}` < 1920)
+  {
+   } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
   paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
 paneltop.addWidget("org.kde.plasma.notifications");
- paneltop.addWidget("org.kde.plasma.marginsseparator");
+if (`${resolution.width}` < 1920)
+  {
+   } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
 paneltop.addWidget("com.github.prayag2.controlcentre");
- paneltop.addWidget("org.kde.plasma.marginsseparator");
+if (`${resolution.width}` < 1920)
+  {
+   } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
    paneltop.addWidget("org.kde.milou");
-    paneltop.addWidget("org.kde.plasma.marginsseparator");
-     paneltop.addWidget("org.kde.plasma.marginsseparator");
+    if (`${resolution.width}` < 1920)
+  {
+   } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
       paneltop_clock = paneltop.addWidget("com.marcinorlowski.htmlclock");
        paneltop_clock.currentConfigGroup = ["Appearance"];
         paneltop_clock.writeConfig("useUserLayout", "true");
          paneltop_clock.currentConfigGroup = ["Configuration/Appearance"];
           paneltop_clock.writeConfig("layout", '<html><body><center><span style="font-weight:500;">{DD:u} {d} {MM:u} {h}:{ii}</span></center></body></html>');
-           paneltop.addWidget("org.kde.plasma.marginsseparator");
-            paneltop.addWidget("org.kde.plasma.marginsseparator");
+           if (`${resolution.width}` < 1920)
+  {
+   } else {
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator");
+}
             /****************************/
-/*Variables para reconocer resolucion*/
-var allDesktops = desktops()
-var resolution = screenGeometry(allDesktops)
 panelbottom = new Panel
  panelbottom.location = "bottom"
-  panelbottom.height = gridUnit * 3.7
+  panelbottom.height = 66
    panelbottom.offset = 0
     panelbottom.alignment = "center"
      panelbottom.panelVisibility = "2"
@@ -183,7 +215,7 @@ panelbottom = new Panel
        panelbottom_tsk.writeConfig("launchers", "");
         panelbottom_tsk.currentConfigGroup = ["General"];
          panelbottom_tsk.writeConfig("indicateAudioStreams", "false");
-          panelbottom_tsk.writeConfig("launchers", `${apps01},${browser},${apps09}`);
+          panelbottom_tsk.writeConfig("launchers", `${apps01},${browser},${apps08}`);
            panelbottom_tsk.writeConfig("maxStripes", "1");
              /*dock/*/
     /*Trash*/
