@@ -129,11 +129,11 @@ panelbottom = new Panel
       else{
            var apps01 = "";
           }
-     /*web browser*/
+      /*web browser*/
            var prevbrowser = `${defaultApplication("browser")}`
 var sentPB = `${prevbrowser.includes("/")}`
 var sentPB2 = `${prevbrowser.includes(".desktop")}`
-if (sentPB === "true"){
+if (`${sentPB}` === "true"){
 if (applicationExists("firefox.desktop"))
 {
 var browser = "applications:firefox.desktop"
@@ -154,37 +154,37 @@ else
 {
 if (applicationExists("chrome.desktop"))
 {
-var browser = "application:chrome.desktop"
+var browser = "applications:chrome.desktop"
 }
 else
 {
 if (applicationExists("com.google.Chrome.desktop"))
 {
-var browser = "applicacions:com.google.Chrome.desktop"
+var browser = "applications:com.google.Chrome.desktop"
 }
 else
 {
 if (applicationExists("falkon.desktop"))
 {
-var browser = "applicacions:falkon.desktop"
+var browser = "applications:falkon.desktop"
 }
 else
 {
 if (applicationExists("org.kde.falkon.desktop"))
 {
-var browser = "application:org.kde.falkon.desktop"
+var browser = "applications:org.kde.falkon.desktop"
 }
 else
 {
 if (applicationExists("librewolf.desktop"))
 {
-var browser = "applicacions:librewolf.desktop"
+var browser = "applications:librewolf.desktop"
 }
 else
 {
 if (applicationExists("io.gitlab.librewolf-community.desktop"))
 {
-var browser = "applicacions:io.gitlab.librewolf-community.desktop"
+var browser = "applications:io.gitlab.librewolf-community.desktop"
 }
 else
 {
@@ -201,14 +201,14 @@ var browser = "0"
 }
 else
 {
-if (sentPB2 === "true"){
-var browser = `applicacions:${prevbrowser}`
+if (`${sentPB2}` === "true"){
+var browser = `applications:${prevbrowser}`
 }
 else
 {
 if (applicationExists(`${prevbrowser}.desktop`))
 {
-var browser = `applicacions:${prevbrowser}.desktop`
+var browser = `applications:${prevbrowser}.desktop`
 }
 else
 {
@@ -232,37 +232,37 @@ else
 {
 if (applicationExists("chrome.desktop"))
 {
-var browser = "application:chrome.desktop"
+var browser = "applications:chrome.desktop"
 }
 else
 {
 if (applicationExists("com.google.Chrome.desktop"))
 {
-var browser = "applicacions:com.google.Chrome.desktop"
+var browser = "applications:com.google.Chrome.desktop"
 }
 else
 {
 if (applicationExists("falkon.desktop"))
 {
-var browser = "applicacions:falkon.desktop"
+var browser = "applications:falkon.desktop"
 }
 else
 {
 if (applicationExists("org.kde.falkon.desktop"))
 {
-var browser = "application:org.kde.falkon.desktop"
+var browser = "applications:org.kde.falkon.desktop"
 }
 else
 {
 if (applicationExists("librewolf.desktop"))
 {
-var browser = "applicacions:librewolf.desktop"
+var browser = "applications:librewolf.desktop"
 }
 else
 {
 if (applicationExists("io.gitlab.librewolf-community.desktop"))
 {
-var browser = "applicacions:io.gitlab.librewolf-community.desktop"
+var browser = "applications:io.gitlab.librewolf-community.desktop"
 }
 else
 {
@@ -388,13 +388,13 @@ var browser = "0"
        panelbottom_tsk.writeConfig("launchers", "");
         panelbottom_tsk.currentConfigGroup = ["General"];
          panelbottom_tsk.writeConfig("indicateAudioStreams", "false");
-          if (`${browser}` === "0")
+                   if (`${browser}` === "0")
            {
           panelbottom_tsk.writeConfig("launchers", `${apps01},${apps08}`);}
           else {
             panelbottom_tsk.writeConfig("launchers", `${apps01},${browser},${apps08}`);
-               }
-           panelbottom_tsk.writeConfig("maxStripes", "1");
+          }
+                        panelbottom_tsk.writeConfig("maxStripes", "1");
              /*dock/*/
     /*Trash*/
     panelbottom.addWidget("org.kde.latte.separator");
