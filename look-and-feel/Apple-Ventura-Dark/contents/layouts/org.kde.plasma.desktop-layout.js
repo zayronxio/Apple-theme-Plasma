@@ -239,19 +239,30 @@ panelbottom = new Panel
        panelbottom_tsk.writeConfig("launchers", "");
         panelbottom_tsk.currentConfigGroup = ["General"];
          panelbottom_tsk.writeConfig("indicateAudioStreams", "false");
-          panelbottom_tsk.writeConfig("launchers", `${apps01},${browser},${apps08}`);
+          if (`${browser}` === "applications:/usr/bin/flatpak")
+           {
+          panelbottom_tsk.writeConfig("launchers", `${apps01},${apps08}`);}
+          else {
+            panelbottom_tsk.writeConfig("launchers", `${apps01},${browser},${apps08}`);
+               }
            panelbottom_tsk.writeConfig("maxStripes", "1");
              /*dock/*/
     /*Trash*/
     panelbottom.addWidget("org.kde.latte.separator");
-      panelbottom_fld = panelbottom.addWidget("org.kde.plasma.folder");
-       panelbottom_fld.currentConfigGroup = ["General"];
-        panelbottom_fld.writeConfig("url", `${userDataPath("downloads")}`);
+          var folderDONW = `${userDataPath("downloads")}`
+    if (applicationExists(`${folderDONW}`))
+       {
+        panelbottom_fld = panelbottom.addWidget("org.kde.plasma.folder");
+        panelbottom_fld.currentConfigGroup = ["General"];
+        panelbottom_fld.writeConfig("url", `${folderDONW}`);
+       }
+       else
+        {
+        panelbottom.addWidget("org.kde.plasma.folder");
+        }
     panelbottom.addWidget("org.kde.plasma.trash");
      /*separator*/
     panelbottom.addWidget("org.kde.plasma.marginsseparator");
      /*separator /*/
 ;
 plasma.loadSerializedLayout(layout);
-
-
