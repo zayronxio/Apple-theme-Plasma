@@ -130,7 +130,156 @@ panelbottom = new Panel
            var apps01 = "";
           }
      /*web browser*/
-           var browser = `applications:${defaultApplication("browser")}`
+           var prevbrowser = `${defaultApplication("browser")}`
+var sentPB = `${prevbrowser.includes("/")}`
+var sentPB2 = `${prevbrowser.includes(".desktop")}`
+if (sentPB === "true"){
+if (applicationExists("firefox.desktop"))
+{
+var browser = "applications:firefox.desktop"
+}
+else
+{
+if (applicationExists("firefox_firefox.desktop"))
+{
+var browser = "applications:firefox_firefox.desktop"
+}
+else
+{
+if (applicationExists("org.mozilla.firefox.desktop"))
+{
+var browser = "applications:org.mozilla.firefox.desktop"
+}
+else
+{
+if (applicationExists("chrome.desktop"))
+{
+var browser = "application:chrome.desktop"
+}
+else
+{
+if (applicationExists("com.google.Chrome.desktop"))
+{
+var browser = "applicacions:com.google.Chrome.desktop"
+}
+else
+{
+if (applicationExists("falkon.desktop"))
+{
+var browser = "applicacions:falkon.desktop"
+}
+else
+{
+if (applicationExists("org.kde.falkon.desktop"))
+{
+var browser = "application:org.kde.falkon.desktop"
+}
+else
+{
+if (applicationExists("librewolf.desktop"))
+{
+var browser = "applicacions:librewolf.desktop"
+}
+else
+{
+if (applicationExists("io.gitlab.librewolf-community.desktop"))
+{
+var browser = "applicacions:io.gitlab.librewolf-community.desktop"
+}
+else
+{
+var browser = "0"
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+else
+{
+if (sentPB2 === "true"){
+var browser = `applicacions:${prevbrowser}`
+}
+else
+{
+if (applicationExists(`${prevbrowser}.desktop`))
+{
+var browser = `applicacions:${prevbrowser}.desktop`
+}
+else
+{
+   if (applicationExists("firefox.desktop"))
+{
+var browser = "applications:firefox.desktop"
+}
+else
+{
+if (applicationExists("firefox_firefox.desktop"))
+{
+var browser = "applications:firefox_firefox.desktop"
+}
+else
+{
+if (applicationExists("org.mozilla.firefox.desktop"))
+{
+var browser = "applications:org.mozilla.firefox.desktop"
+}
+else
+{
+if (applicationExists("chrome.desktop"))
+{
+var browser = "application:chrome.desktop"
+}
+else
+{
+if (applicationExists("com.google.Chrome.desktop"))
+{
+var browser = "applicacions:com.google.Chrome.desktop"
+}
+else
+{
+if (applicationExists("falkon.desktop"))
+{
+var browser = "applicacions:falkon.desktop"
+}
+else
+{
+if (applicationExists("org.kde.falkon.desktop"))
+{
+var browser = "application:org.kde.falkon.desktop"
+}
+else
+{
+if (applicationExists("librewolf.desktop"))
+{
+var browser = "applicacions:librewolf.desktop"
+}
+else
+{
+if (applicationExists("io.gitlab.librewolf-community.desktop"))
+{
+var browser = "applicacions:io.gitlab.librewolf-community.desktop"
+}
+else
+{
+var browser = "0"
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+}
+/*end web browser*/
      /*discover*/
       if (applicationExists("org.kde.discover.desktop"))
           {
@@ -239,7 +388,7 @@ panelbottom = new Panel
        panelbottom_tsk.writeConfig("launchers", "");
         panelbottom_tsk.currentConfigGroup = ["General"];
          panelbottom_tsk.writeConfig("indicateAudioStreams", "false");
-          if (`${browser}` === "applications:/usr/bin/flatpak")
+          if (`${browser}` === "0")
            {
           panelbottom_tsk.writeConfig("launchers", `${apps01},${apps08}`);}
           else {
