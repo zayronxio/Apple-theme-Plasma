@@ -1,108 +1,79 @@
-/*******Panel Top**********/
+/*******Panel Top*********/
 paneltop = new Panel
 paneltop.hiding = "none"
 paneltop.location = "top"
 paneltop.height = 24
 paneltop.offset = 0
-;
-/*Variables para reconocer resolucion*/
-var allDesktops = desktops()
-var resolution = screenGeometry(allDesktops)
 /*kapple*/
-if (`${resolution.width}` < 1920){
-  if (`${resolution.width}` < 900){
+if ((screenGeometry(paneltop.screen).width) <= 900){
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
      } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
 }
-   } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-  paneltop.addWidget("org.kpple.kppleMenu");
-paneltop_napp = paneltop.addWidget("org.kde.activeApplication");
- paneltop_napp.currentConfigGroup = ["Appearance"];
-  paneltop_napp.writeConfig("noWindowText", "Desktop");
-paneltop.addWidget("org.kde.plasma.appmenu");
- paneltop.addWidget("org.kde.plasma.panelspacer");
-paneltop_clock = paneltop.addWidget("org.kde.plasma.bigSur-inlineBattery");
- paneltop_clock.currentConfigGroup = ["General"];
-  paneltop_clock.writeConfig("fontSize", "13");
-   paneltop_clock.writeConfig("iconHeight", "12");
-    paneltop_clock.writeConfig("iconWidth", "23");
-     paneltop_clock.writeConfig("padding", "4");
-      paneltop_clock.writeConfig("showPercentage", "false");
-if (`${resolution.width}` < 1920){
-  if (`${resolution.width}` < 900){
+  paneltop.addWidget("org.kpple.kppleMenu")
+paneltop_napp = paneltop.addWidget("org.kde.activeApplication")
+ paneltop_napp.currentConfigGroup = ["Appearance"]
+  paneltop_napp.writeConfig("noWindowText", "Desktop")
+paneltop.addWidget("org.kde.plasma.appmenu")
+ paneltop.addWidget("org.kde.plasma.panelspacer")
+paneltop_Battery = paneltop.addWidget("org.kde.plasma.bigSur-inlineBattery")
+ paneltop_Battery.currentConfigGroup = ["General"]
+  paneltop_Battery.writeConfig("fontSize", "13")
+   paneltop_Battery.writeConfig("iconHeight", "12")
+    paneltop_Battery.writeConfig("iconWidth", "23")
+     paneltop_Battery.writeConfig("padding", "4")
+      paneltop_Battery.writeConfig("showPercentage", "false")
+  if ((screenGeometry(paneltop.screen).width) <= 900){
+  if ((screenGeometry(paneltop.screen).width) <= 720){
+  paneltop.addWidget("org.kde.plasma.networkmanagement")
+  paneltop.addWidget("org.kde.plasma.volume")
+  paneltop.addWidget("org.kde.plasma.notifications")
+  paneltop.addWidget("com.github.prayag2.controlcentre")
+  paneltop.addWidget("org.kde.milou")
+} else
+{
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.networkmanagement")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.volume")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.notifications")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("com.github.prayag2.controlcentre")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.milou")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+   }
      } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.networkmanagement")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.volume")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.notifications")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("com.github.prayag2.controlcentre")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.milou")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
 }
-   } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-paneltop.addWidget("org.kde.plasma.networkmanagement");
-if (`${resolution.width}` < 1920){
-  if (`${resolution.width}` < 900){
-     } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-   } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-  paneltop.addWidget("org.kde.plasma.volume");
-if (`${resolution.width}` < 1920){
-  if (`${resolution.width}` < 900){
-     } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-   } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-paneltop.addWidget("org.kde.plasma.notifications");
-if (`${resolution.width}` < 1920){
-  if (`${resolution.width}` < 900){
-     } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-   } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-paneltop.addWidget("com.github.prayag2.controlcentre");
-if (`${resolution.width}` < 1920){
-  if (`${resolution.width}` < 900){
-     } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-   } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-   paneltop.addWidget("org.kde.milou");
- if (`${resolution.width}` < 1920){
-  if (`${resolution.width}` < 900){
-     } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-   } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-      paneltop_clock = paneltop.addWidget("com.marcinorlowski.htmlclock");
+      paneltop_clock = paneltop.addWidget("com.marcinorlowski.htmlclock")
        paneltop_clock.currentConfigGroup = ["Appearance"];
-        paneltop_clock.writeConfig("useUserLayout", "true");
+        paneltop_clock.writeConfig("useUserLayout", "true")
          paneltop_clock.currentConfigGroup = ["Configuration/Appearance"];
           paneltop_clock.writeConfig("layout", '<html><body><center><span style="font-weight:500;">{DD:u} {d} {MM:u} {h}:{ii}</span></center></body></html>');
- if (`${resolution.width}` < 1920){
-  if (`${resolution.width}` < 900){
+if ((screenGeometry(paneltop.screen).width) <= 900){
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
      } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-}
-   } else {
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
-  paneltop.addWidget("org.kde.plasma.marginsseparator");
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
+  paneltop.addWidget("org.kde.plasma.marginsseparator")
 }
             /****************************/
 panelbottom = new Panel
@@ -111,8 +82,14 @@ panelbottom = new Panel
    panelbottom.offset = 0
     panelbottom.alignment = "center"
      panelbottom.panelVisibility = "2"
-      panelbottom.maximumLength = (`${resolution.width}`*(.90))
-       panelbottom.minimumLength = (`${resolution.width}`*(.14))
+      if ((screenGeometry(panelbottom.screen).width) === 1920){
+      panelbottom.maximumLength = 1728
+       panelbottom.minimumLength = 100
+     } else
+     {
+       panelbottom.maximumLength = (screenGeometry(panelbottom.screen).width*(.90))
+       panelbottom.minimumLength = (screenGeometry(panelbottom.screen).width*(.14))
+    }
         panelbottom.hiding = "windowscover"
          panelbottom.addWidget("org.kde.plasma.marginsseparator")
           panelbottom_start = panelbottom.addWidget("P-Connor.PlasmaDrawer")
@@ -130,9 +107,9 @@ panelbottom = new Panel
            var apps01 = "";
           }
       /*web browser*/
-           var prevbrowser = `${defaultApplication("browser")}`
-var sentPB = `${prevbrowser.includes("/")}`
-var sentPB2 = `${prevbrowser.includes(".desktop")}`
+           var prevbrowser = defaultApplication("browser")
+var sentPB = prevbrowser.includes("/")
+var sentPB2 = prevbrowser.includes(".desktop")
 if (`${sentPB}` === "true"){
 if (applicationExists("firefox.desktop"))
 {
@@ -383,35 +360,36 @@ var browser = "0"
            /*filemanager/*/
            /*icons dock /*/
   /*dock*/
-     panelbottom_tsk = panelbottom.addWidget("org.kde.plasma.icontasks");
+     panelbottom_tsk = panelbottom.addWidget("org.kde.plasma.icontasks")
       panelbottom_tsk.currentConfigGroup = [];
-       panelbottom_tsk.writeConfig("launchers", "");
+       panelbottom_tsk.writeConfig("launchers", "")
         panelbottom_tsk.currentConfigGroup = ["General"];
-         panelbottom_tsk.writeConfig("indicateAudioStreams", "false");
+         panelbottom_tsk.writeConfig("indicateAudioStreams", "false")
+         panelbottom_tsk.writeConfig("iconSpacing", "0")
                    if (`${browser}` === "0")
            {
-          panelbottom_tsk.writeConfig("launchers", `${apps01},${apps08}`);}
+          panelbottom_tsk.writeConfig("launchers", `${apps01},${apps08}`)
+           }
           else {
-            panelbottom_tsk.writeConfig("launchers", `${apps01},${browser},${apps08}`);
+            panelbottom_tsk.writeConfig("launchers", `${apps01},${browser},${apps08}`)
           }
-                        panelbottom_tsk.writeConfig("maxStripes", "1");
+                        panelbottom_tsk.writeConfig("maxStripes", "1")
              /*dock/*/
     /*Trash*/
-    panelbottom.addWidget("org.kde.latte.separator");
+    panelbottom.addWidget("org.kde.latte.separator")
           var folderDONW = `${userDataPath("downloads")}`
     if (applicationExists(`${folderDONW}`))
        {
-        panelbottom_fld = panelbottom.addWidget("org.kde.plasma.folder");
+        panelbottom_fld = panelbottom.addWidget("org.kde.plasma.folder")
         panelbottom_fld.currentConfigGroup = ["General"];
-        panelbottom_fld.writeConfig("url", `${folderDONW}`);
+        panelbottom_fld.writeConfig("url", `${folderDONW}`)
        }
        else
         {
-        panelbottom.addWidget("org.kde.plasma.folder");
+        panelbottom.addWidget("org.kde.plasma.folder")
         }
-    panelbottom.addWidget("org.kde.plasma.trash");
+    panelbottom.addWidget("org.kde.plasma.trash")
      /*separator*/
-    panelbottom.addWidget("org.kde.plasma.marginsseparator");
+    panelbottom.addWidget("org.kde.plasma.marginsseparator")
      /*separator /*/
-;
 plasma.loadSerializedLayout(layout);
