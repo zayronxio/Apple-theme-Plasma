@@ -9,8 +9,7 @@ if ((screenGeometry(paneltop.screen).width) <= 900){
   paneltop.addWidget("org.kde.plasma.marginsseparator")
      } else {
   paneltop.addWidget("org.kde.plasma.marginsseparator")
-  paneltop.addWidget("org.kde.plasma.marginsseparator")
-}
+  paneltop.addWidget("org.kde.plasma.marginsseparator")}
   paneltop.addWidget("org.kpple.kppleMenu")
 paneltop_napp = paneltop.addWidget("org.kde.activeApplication")
  paneltop_napp.currentConfigGroup = ["Appearance"]
@@ -84,12 +83,21 @@ panelbottom = new Panel
      panelbottom.panelVisibility = "2"
       if ((screenGeometry(panelbottom.screen).width) === 1920){
       panelbottom.maximumLength = 1728
-       panelbottom.minimumLength = 100
-     } else
+       } else
+     {
+       if ((screenGeometry(panelbottom.screen).width) === 900){
+      panelbottom.maximumLength = 810
+       } else
+     {
+       if ((screenGeometry(panelbottom.screen).width) === 720){
+      panelbottom.maximumLength = 648
+       } else
      {
        panelbottom.maximumLength = (screenGeometry(panelbottom.screen).width*(.90))
-       panelbottom.minimumLength = (screenGeometry(panelbottom.screen).width*(.14))
     }
+    }
+    }
+    panelbottom.minimumLength = 100
         panelbottom.hiding = "windowscover"
          panelbottom.addWidget("org.kde.plasma.marginsseparator")
           panelbottom_start = panelbottom.addWidget("P-Connor.PlasmaDrawer")
