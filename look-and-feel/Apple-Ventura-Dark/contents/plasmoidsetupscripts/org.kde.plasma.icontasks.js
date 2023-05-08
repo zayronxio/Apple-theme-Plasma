@@ -54,114 +54,48 @@ else
 var browser = BrowserApp()
 }
 /*end web browser*/
-     /*discover*/
-      if (applicationExists("org.kde.discover.desktop"))
-          {
-           var apps02 = "applications:org.kde.discover.desktop";
-          }
-      else{
-           var apps02 = "";
-          }
-     /*gwenview*/
-      if (applicationExists("org.kde.gwenview.desktop"))
-          {
-           var apps03 = `${apps02},applications:org.kde.gwenview.desktop`;
-          }
-      else{
-           var apps03 = `${apps02}`;
-          }
-           /*email*/
-      if (defaultApplication("mailer"))
-         {
-          var apps04 = `${apps03},applications:${defaultApplication("mailer")}`;
-         }
-      else{
-       var apps04 = `${apps03}`;
-         }
-     /*konsole*/
-      if (applicationExists("org.kde.konsole.desktop"))
-          {
-           var apps05 = `${apps04},applications:org.kde.konsole.desktop`;
-          }
-      else{
-           var apps05 = `${apps04}`;
-          }
-     /*settings*/
-      if (applicationExists("systemsettings.desktop"))
-          {
-           var apps06 = `${apps05},applications:systemsettings.desktop`;
-          }
-      else{
-           var apps06 = `${apps05}`;
-          }
-          /*music player*/
-          if (applicationExists("org.kde.elisa.desktop"))
-        {
-       var apps07 = `${apps06},applications:org.kde.elisa.desktop`;
-        }
-     else{
-      if (applicationExists("audacious.desktop"))
-        {
-       var apps07 = `${apps06},applications:audacious.desktop`;
-        }
-     else{
-       if (applicationExists("file:///var/lib/flatpak/exports/share/applications/org.atheme.audacious.desktop"))
-        {
-       var apps07 = `${apps06},file:///var/lib/flatpak/exports/share/applications/org.atheme.audacious.desktop`;
-        }
-     else{
-       if (applicationExists("clementine.desktop"))
-        {
-       var apps07 = `${apps06},applications:clementine.desktop`;
-        }
-     else{
-       if (applicationExists("org.gnome.Lollypop.desktop"))
-        {
-       var apps07 = `${apps06},applications:org.gnome.Lollypop.desktop`;
-        }
-     else{
-       if (applicationExists("com.github.neithern.g4music.desktop"))
-        {
-       var apps07 = `${apps06},applications:com.github.neithern.g4music.desktop`;
-        }
-     else{
-       var apps07 = `${apps06}`;
-         }
-         }
-         }
-         }
-         }
-         }
-     /*text-editor*/
-      if (applicationExists("org.kde.kate.desktop"))
-          {
-           var apps08 = `${apps07},applications:org.kde.kate.desktop`;
-          }
-      else{
-            if (applicationExists("org.kde.kwrite.desktop"))
-                 {
-                  var apps08 = `${apps07},applications:org.kde.kwrite.desktop`;
-                 }
-             else{
-                  var apps08 = `${apps07}`;
-                 }
-          }
-     /*okular*/
-      if (applicationExists("okularApplication_comicbook.desktop"))
-          {
-           var apps09 = `${apps08},applications:okularApplication_comicbook.desktop`;
-          }
-      else{
-           var apps09 = `${apps08}`;
-          }
-          if (applicationExists("spotify.desktop"))
-          {
-           var apps11 = `${apps09},applications:spotify.desktop`;
-          }
-      else{
-           var apps11 = `${apps09}`;
-          }
-           /*filemanager/*/
+function FindApps(){
+ let FullApps = {
+  1 : "org.kde.discover.desktop",
+  2 : "org.kde.gwenview.desktop",
+  3 : "org.kde.konsole.desktop",
+  4 : "systemsettings.desktop",
+  10 : "okularApplication_comicbook.desktop",
+  11 : "spotify.desktop",
+       }
+       let MusicPLayer = {
+  1 : "org.kde.elisa.desktop",
+  2 : "audacious.desktop",
+  3 : "file:///var/lib/flatpak/exports/share/applications/org.atheme.audacious.desktop",
+  4 : "clementine.desktop",
+  5 : "org.gnome.Lollypop.desktop",
+  6 : "com.github.neithern.g4music.desktop",
+      }
+      let TextEditor = {
+  1 : "org.kde.kwrite.desktop",
+  2 : "org.kde.kate.desktop",
+      }
+let result = '';
+for (a = 1;  a < 11; a++) {
+if (applicationExists(FullApps[a]))  {
+    result += 'applications:'+FullApps[a] + ', ';  }
+}
+let resultMusic = '';
+for (a = 1;  a < 6; a++) {
+if (applicationExists(MusicPLayer[a]))  {
+    resultMusic += 'applications:'+MusicPLayer[a] + ', ';  }
+}
+let resultEditor = '';
+for (a = 1;  a < 6; a++) {
+if (applicationExists(TextEditor[a]))  {
+    resultEditor += 'applications:'+TextEditor[a] + ', ';  }
+}
+var AppsPrev = (result+resultMusic.split(' ')[0]+' '+resultEditor.split(' ')[0]).replace(/ /g,'')
+var AppsFinal = AppsPrev.substring(0, AppsPrev.length - 1)
+return AppsFinal
+}
+
+var apps = FindApps()
            /*icons dock /*/
   /*dock*/
 applet.currentConfigGroup = [];
@@ -171,9 +105,9 @@ applet.writeConfig("indicateAudioStreams", "false")
 applet.writeConfig("iconSpacing", "0")
 if (`${browser}` === "0")
            {
-applet.writeConfig("launchers", `${apps01},${apps11}`)
+applet.writeConfig("launchers", `${apps01},${apps}`)
            }
 else {
-applet.writeConfig("launchers", `${apps01},${browser},${apps11}`)
+applet.writeConfig("launchers", `${apps01},${browser},${apps}`)
           }
 applet.writeConfig("maxStripes", "1")
