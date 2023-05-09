@@ -1,3 +1,5 @@
+const allDesktops = desktops()
+const NumIconsMax = ((screenGeometry(allDesktops).width)*(.90))/(64)-3
    /*Tasks*/
     /*added icons apps*/
      /*filemanager*/
@@ -54,14 +56,15 @@ else
 var browser = BrowserApp()
 }
 /*end web browser*/
-function FindApps(){
+function FindApps(y){
  let FullApps = {
   1 : "org.kde.discover.desktop",
   2 : "org.kde.gwenview.desktop",
   3 : "org.kde.konsole.desktop",
   4 : "systemsettings.desktop",
-  10 : "okularApplication_comicbook.desktop",
-  11 : "spotify.desktop",
+  5 : "okularApplication_comicbook.desktop",
+  6 : "spotify.desktop",
+  7 : "org.inkscape.Inkscape",
        }
        let MusicPLayer = {
   1 : "org.kde.elisa.desktop",
@@ -76,7 +79,7 @@ function FindApps(){
   2 : "org.kde.kate.desktop",
       }
 let result = '';
-for (a = 1;  a < 11; a++) {
+for (a = 1;  a < 7; a++) {
 if (applicationExists(FullApps[a]))  {
     result += 'applications:'+FullApps[a] + ', ';  }
 }
@@ -92,10 +95,10 @@ if (applicationExists(TextEditor[a]))  {
 }
 var AppsPrev = (result+resultMusic.split(' ')[0]+' '+resultEditor.split(' ')[0]).replace(/ /g,'')
 var AppsFinal = AppsPrev.substring(0, AppsPrev.length - 1)
-return AppsFinal
+return AppsFinal.split(',',y)
 }
 
-var apps = FindApps()
+var apps = FindApps(NumIconsMax)
            /*icons dock /*/
   /*dock*/
 applet.currentConfigGroup = [];
