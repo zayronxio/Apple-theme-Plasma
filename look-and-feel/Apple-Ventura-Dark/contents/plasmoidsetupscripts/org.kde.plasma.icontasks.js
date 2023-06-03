@@ -64,7 +64,15 @@ function FindApps(y){
   4 : "systemsettings.desktop",
   5 : "okularApplication_comicbook.desktop",
   6 : "spotify.desktop",
-  7 : "org.inkscape.Inkscape",
+  7 : "org.inkscape.Inkscape.desktop",
+  8 : "libreoffice-writer.desktop",
+  9 : "libreoffice_writer.desktop",
+  10 : "libreoffice-calc.desktop",
+  11 : "libreoffice_calc.desktop",
+  12 : "file:///var/lib/flatpak/exports/share/applications/com.wps.Office.wps.desktop",
+  13 : "gimp.desktop",
+  14 : "org.telegram.desktop.desktop",
+  15 : "org.telegram.desktop"
        }
        let MusicPLayer = {
   1 : "org.kde.elisa.desktop",
@@ -79,7 +87,7 @@ function FindApps(y){
   2 : "org.kde.kate.desktop",
       }
 let result = '';
-for (a = 1;  a < 7; a++) {
+for (a = 1;  a < 15; a++) {
 if (applicationExists(FullApps[a]))  {
     result += 'applications:'+FullApps[a] + ', ';  }
 }
@@ -90,7 +98,7 @@ if (applicationExists(MusicPLayer[a]))  {
 }
 let resultEditor = '';
 for (a = 1;  a < 6; a++) {
-if (applicationExists(TextEditor[a]))  {
+if ()  {
     resultEditor += 'applications:'+TextEditor[a] + ', ';  }
 }
 var AppsPrev = (result+resultMusic.split(' ')[0]+' '+resultEditor.split(' ')[0]).replace(/ /g,'')
