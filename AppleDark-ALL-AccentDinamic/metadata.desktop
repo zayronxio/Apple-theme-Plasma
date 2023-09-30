@@ -1,0 +1,18 @@
+[Desktop Entry]
+Name=AppleDark-ALL-AccentDinamic
+Comment=Plasma theme for miscellaneous global themes of kde, whit similar in appearance to macos
+
+X-KDE-PluginInfo-Author=zayronxio
+X-KDE-PluginInfo-Name=AppleDark-ALL-AccentDinamic
+X-KDE-PluginInfo-Version=1.8
+X-KDE-PluginInfo-License=LGPL
+X-KDE-PluginInfo-EnabledByDefault=true
+X-Plasma-API=5.0
+
+
+[ContrastEffect]
+enabled=false
+contrast=0.2
+intensity=1.4
+saturation=10
+
